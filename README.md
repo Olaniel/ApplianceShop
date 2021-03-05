@@ -1,2 +1,2 @@
 # Appliance Shop
-### DAO simple architecture implementation for EMAP Java Web Development course
+### DAO simple architecture implementation for EPAM Java Web Development course
