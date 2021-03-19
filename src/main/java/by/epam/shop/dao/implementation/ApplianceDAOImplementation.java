@@ -15,12 +15,13 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ApplianceDAOImplementation implements ApplianceDAO {
-    private static final List<String> textFromFile = new ArrayList<>();
+public class ApplianceDAOImplementation implements ApplianceDAO {// очень хорошо учи ООП, у тебя с проектирование беда - называется, что вижу где открыл там примерно и пишу
+    private static final List<String> textFromFile = new ArrayList<>();// //поля здесь абсолютно не к месту, да еще в таком виде - хранят инфу дублированно
     private static Object[] keysArray;
     private static Object[] valuesArray;
+
     public static void fileReader() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream("src/main/resources/appliances_db.txt");
+        FileInputStream fileInputStream = new FileInputStream("src/main/resources/appliances_db.txt");// с таким путем можно забыть о запуске кода где-нибудь, кроме твоей IDE
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
         String stringLine;
         while ((stringLine = bufferedReader.readLine()) != null){
@@ -46,7 +47,7 @@ public class ApplianceDAOImplementation implements ApplianceDAO {
         valuesArray = values.toArray();
     }
     @Override
-    public Appliance find(Criteria criteria) {
+    public Appliance find(Criteria criteria) {// ну и из-за неверной иерархии создание объекта представляется профанацией
         List<String> parsedList = new ArrayList<>();
         for (String s : textFromFile) {
             int counter = 0;
